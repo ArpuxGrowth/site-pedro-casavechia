@@ -6,6 +6,29 @@
  * Copyright (c) 2021 themezaa.com
  */
 
+ @media (max-width: 2560px) {
+    .xxl-margin-20px-bottom { margin-bottom:20px; }
+    .xxl-margin-25px-bottom { margin-bottom:25px; }
+    .xxl-margin-30px-bottom { margin-bottom:30px; }
+    .xxl-margin-35px-bottom { margin-bottom:35px; }
+    .xxl-margin-40px-bottom { margin-bottom:40px; }
+    .xxl-margin-45px-bottom { margin-bottom:45px; }
+    .xxl-margin-50px-bottom { margin-bottom:50px; }
+    .xxl-margin-55px-bottom { margin-bottom:55px; }
+    .xxl-margin-60px-bottom { margin-bottom:60px; }
+    .xxl-margin-65px-bottom { margin-bottom:65px; }
+    .xxl-margin-70px-bottom { margin-bottom:70px; }
+    .xxl-margin-75px-bottom { margin-bottom:75px; }
+    .xxl-margin-80px-bottom { margin-bottom:80px; }
+    .xxl-margin-85px-bottom { margin-bottom:85px; }
+    .xxl-margin-90px-bottom { margin-bottom:90px; }
+    .xxl-margin-95px-bottom { margin-bottom:95px; }
+    .xxl-margin-100px-bottom { margin-bottom:100px; }
+
+    .xxl-no-padding-tb { padding-top: 0 !important; padding-bottom: 0 !important; }
+    .xxl-no-padding-top { padding-top: 0 !important; }
+ }
+
 @media (min-width: 1901px) {
     .litho-parallax-bg { width: 45%; }
 }
@@ -20,6 +43,7 @@
 
     /* typography */
     .text-extra-big { font-size: 200px; line-height: 200px; }
+    .text-extra-big-3 { font-size: 180px; line-height: 180px; }
 
     /* letter spacing minus */
     .xl-letter-spacing-minus-1-half { letter-spacing: -0.50px; }
@@ -1293,9 +1317,17 @@
     .home-fashion-shop .tp-tabs { left: 54% !important; }
 }
 
+@media (max-width: 1396) {
+    /* font size */
+    .lg-fs-5 { font-size: 1rem !important;}
+}
+
 @media (max-width: 1300px) {
     /* fashion shop */
     .home-fashion-shop .tp-tabs { left: 60% !important; }
+
+    /* text size */
+    .text-extra-big-3 { font-size: 170px; line-height: 170px; }
 }
 
 @media (min-width: 1199px) {
@@ -1322,6 +1354,7 @@
     .title-large { font-size: 90px; line-height: 90px; }
     .text-extra-large { font-size: 18px; line-height: 24px; }
     .text-extra-big { font-size: 170px; line-height: 170px; }
+    .text-extra-big-3 { font-size: 150px; line-height: 150px; }
     .text-big { font-size: 160px; line-height: 160px; }
     .title-extra-large { font-size: 110px; line-height: 100px; }
     .title-large-3 { font-size: 70px; line-height:70px; }
@@ -2802,6 +2835,11 @@
     
     /* magnific popup */
     button.mfp-close, .mfp-image-holder button.mfp-close, .mfp-iframe-holder button.mfp-close, .mfp-close:active { top: 20px; right: 20px; }
+}
+
+@media (max-width: 1040px) {
+    /* text size */
+    .text-extra-big-3 { font-size: 140px; line-height: 140px; }
 }
 
 @media (max-width: 1024px) {
@@ -4422,6 +4460,7 @@
 
     /* text size */
     .text-extra-big { font-size: 130px; line-height: 130px; }
+    .text-extra-big-3 { font-size: 130px; line-height: 130px; }
 
     /* letter spacing */
     .md-letter-spacing-normal { letter-spacing: normal; }
@@ -4749,6 +4788,11 @@
     .home-startup .rev_slider_wrapper { min-height: 450px; }
 }
 
+@media (max-width: 898px) {
+    /* text size */
+    .text-extra-big-3 { font-size: 110px; line-height: 110px; }
+}
+
 @media (max-width: 778px) {
     /* home decor */
     .home-decor .rev_slider_wrapper { height: 540px; }
@@ -4776,6 +4820,7 @@
     .title-large { font-size: 45px; line-height: 43px; }
     .title-extra-large { font-size: 50px; line-height:50px }
     .text-extra-big { font-size: 100px; line-height: 100px; }
+    .text-extra-big-3 { font-size: 100px; line-height: 100px; }
     .text-big { font-size: 90px; line-height: 90px; }
 
     /* lineheight */
@@ -6383,6 +6428,11 @@
     .horizontal-portfolio-slider-main .horizontal-portfolio-slider .swiper-slide { height: auto;}
 }
 
+@media (max-width: 685px) {
+    /* font size */
+    .text-extra-big-3 { font-size: 84px; line-height: 84px; }
+}
+
 @media screen and (max-width: 575px) {
     /* reset */
     section.big-section { padding:50px 0; }
@@ -6390,6 +6440,7 @@
 
     /* text size */
     .text-extra-big-2 { font-size: 230px; line-height: 190px; }
+    .text-extra-big-3 { font-size: 65px; line-height: 65px; }
 
     /* lineheight */
     .xs-line-height-0px { line-height: 0px; }
@@ -7962,6 +8013,9 @@
 }
 
 @media screen and (max-width: 480px) {
+    /* font size */
+    .text-extra-big-3 { font-size: 50px; line-height: 50px; }
+
     /* yoga meditation*/
     .home-yoga-meditation .rev_slider_wrapper { height: calc(100vh - 72px) !important; }
 
