@@ -4596,7 +4596,7 @@ footer .footer-horizontal-link li:last-child {margin-right: 0}
 .footer-sticky { position: fixed; width: 100%; bottom: 0; left: 0; right: 0; z-index: 0; }
 
 /* scroll to top */
-.scroll-top-arrow, .scroll-top-arrow:focus { background: #fff; font-size: 17px; line-height: 34px; box-shadow: 0 0 25px rgba(23,23,23,.25); display: none; height: 34px; width: 34px; padding: 0; position: fixed; right: 45px; text-align: center; text-decoration: none; bottom: 45px; z-index: 1029; border-radius: 100%; }
+.scroll-top-arrow, .scroll-top-arrow:focus { background: #fff; font-size: 17px; line-height: 34px; box-shadow: 0 0 25px rgba(23,23,23,.25); display: none; height: 34px; width: 34px; padding: 0; position: fixed; right: 35px; text-align: center; text-decoration: none; bottom: 110px; z-index: 1029; border-radius: 100%; }
 .scroll-top-arrow:hover { background: #fff; color: #828282; box-shadow: 0 0 30px rgba(23,23,23,.4);-webkit-transform: translateY(-2px); -ms-transform: translateY(-2px); transform: translateY(-2px);}
 
 /* footer instagram feed */
