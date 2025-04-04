@@ -5047,8 +5047,14 @@ input[type="checkbox"].error { box-shadow: 0px 0px 0px 1px rgb(255 0 0), 1px 1px
 }
 
 /* Responsive header screen */
-@media (max-width: 431px) {
-    .vh-65-mobile {
-        min-height: 65vh !important;
+@media (min-width: 305px) and (max-width: 431px) {
+    .vh-responsive-mobile {
+        min-height: 600px !important;
+    }
+}
+
+@media (max-width: 304px) {
+    .vh-responsive-mobile {
+        min-height: 650px !important;
     }
 }
