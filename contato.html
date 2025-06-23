@@ -136,8 +136,47 @@
                     </div>
                     <div class="col-lg-6 offset-lg-1 col-md-8">
                         <h4 class="alt-font text-black font-weight-600">Formulário de contato</h4>
-                        <div role="main" id="formulario-do-site-dr-pedro-casavechia-bf9902e7096c0a3fde80"></div>
+                        <form id="form-contact" class="alt-font text-extra-dark-gray">
+                            <input class="input-border-bottom border-color-extra-dark-gray bg-transparent placeholder-dark large-input px-0 margin-25px-bottom border-radius-0px required"
+                            type="text" name="name" placeholder="Nome" required />
+                            <input class="input-border-bottom border-color-extra-dark-gray bg-transparent placeholder-dark large-input px-0 margin-25px-bottom border-radius-0px required"
+                            type="email" name="email" placeholder="E-mail" required />
+                            <input class="input-border-bottom border-color-extra-dark-gray bg-transparent placeholder-dark large-input px-0 margin-25px-bottom border-radius-0px"
+                            type="tel" name="phone" placeholder="Celular" required />
+                            <input type="hidden" name="redirect" value="">
+                            <button class="btn btn-medium btn-fast-blue mb-0 submit" type="submit">enviar</button>
+                            <div class="form-results d-none text-teal-blue"></div>
+                        </form>
                     </div>
+                    <script>
+                        const form = document.getElementById('form-contact');
+                        const btn = form.querySelector('button[type="submit"]');
+                        const resultDiv = form.querySelector('.form-results');
+
+                        btn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            console.log('Botão submit clicado');
+
+                            if (form.checkValidity()) {
+                                resultDiv.classList.remove('d-none');
+                                resultDiv.textContent = 'Enviando informações, aguarde…';
+                                btn.disabled = true;
+
+                                setTimeout(() => {
+                                    resultDiv.classList.remove('text-teal-blue');
+                                    resultDiv.classList.add('text-green');
+                                    resultDiv.textContent = 'As informações foram enviadas com sucesso!';
+                                        setTimeout(() => {
+                                            form.reset();
+                                            resultDiv.classList.remove('text-green');
+                                            resultDiv.classList.add('d-none');
+                                            resultDiv.classList.add('text-teal-blue');
+                                            btn.disabled = false;
+                                        }, 4000);
+                                }, 4000);
+                            }
+                        });
+                    </script>
                 </div>
             </div>
         </section>
@@ -251,8 +290,6 @@
         <!-- end scroll to top -->
         <!-- javascript -->
         <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/d5b82ad1-2ddb-4b32-b6d3-a168d6185168-loader.js" ></script>
-        <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
-        <script type="text/javascript"> new RDStationForms('formulario-do-site-dr-pedro-casavechia-bf9902e7096c0a3fde80', 'null').createForm();</script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/theme-vendors.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
