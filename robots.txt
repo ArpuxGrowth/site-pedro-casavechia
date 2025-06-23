@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drpedrocasavechia.com.br/sitemap.xml
