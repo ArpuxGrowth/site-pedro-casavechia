@@ -23,11 +23,15 @@ blogs.forEach(blog => {
                 <a href=blog/${uid}><img src=${image} alt=""></a>
             </div>
             <div class="post-details bg-white text-center padding-3-rem-all xl-padding-2-rem-all">
-                <a href=blog/${uid} class="blog-category text-fast-blue margin-15px-bottom text-medium font-weight-500 letter-spacing-1px text-uppercase">Lifestyle</a>
+                <a href=blog/${uid} class="blog-category text-fast-blue margin-15px-bottom text-medium font-weight-500 letter-spacing-1px text-uppercase">Artigo</a>
                 <a href=blog/${uid} class="alt-font text-extra-dark-gray text-extra-dark-gray-hover text-large line-height-26px d-block margin-20px-bottom">${title}</a>
                 <a href=blog/${uid} class="alt-font text-uppercase text-extra-small letter-spacing-1px d-block">${date}</a>
             </div>
         </div>
     `
     posts.appendChild(article)
+
+    const $newItem = $(article);
+
+    window.blogGrid.isotope('appended', $newItem).isotope('layout');
 });
