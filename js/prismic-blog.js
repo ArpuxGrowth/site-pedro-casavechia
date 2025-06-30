@@ -4,13 +4,11 @@ const repo = 'https://drpedrocasavechiablog.cdn.prismic.io/api/v2';
 const client = createClient(repo);
 const blogs = await client.getAllByType('blog_post');
 
-console.log('Dados da API PRISMIC:', blogs);
-
 blogs.forEach(blog => {
     
     const uid = blog.uid;
     const title = blog.data.title[0].text;
-    const date = blog.data.date;
+    const date = Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(blog.data.date));
     const image = blog.data.thumb_image?.url;
     
     const posts = document.getElementById('posts');
