@@ -4,17 +4,18 @@ const repo = 'https://drpedrocasavechiablog.cdn.prismic.io/api/v2';
 const client = createClient(repo);
 const blogs = await client.getAllByType('blog_post');
 
-blogs.forEach(blog => {
-    
+blogs.forEach((blog, i) => {
     const uid = blog.uid;
     const title = blog.data.title[0].text;
     const date = Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(blog.data.date));
     const image = blog.data.thumb_image?.url;
+    const delay = 0.2 * (i + 1);
     
     const posts = document.getElementById('posts');
 
     const article = document.createElement('li')
     article.className = 'grid-item wow animate__fadeIn'
+    article.setAttribute('data-wow-delay', `${delay}s`);
     article.innerHTML = `
         <div class="blog-post">
             <div class="blog-post-image bg-fast-blue">
@@ -31,5 +32,9 @@ blogs.forEach(blog => {
 
     const $newItem = $(article);
 
-    window.blogGrid.isotope('appended', $newItem).isotope('layout');
+    $newItem.imagesLoaded(() => {
+        window.blogGrid
+            .isotope('appended', $newItem)
+            .isotope('layout');
+    });
 });
