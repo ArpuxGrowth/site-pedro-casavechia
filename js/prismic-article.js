@@ -136,7 +136,11 @@ function renderRelatedPosts(slice) {
 document.addEventListener('DOMContentLoaded', async () => {
   if (!uid) {
     const post = document.getElementById('post');
+    const latestPosts = document.getElementById('latest-posts');
+    const relatedPosts = document.getElementById('related-posts');
     if (post) post.innerHTML = '<p>Artigo não encontrado.</p>';
+    if (latestPosts) latestPosts.innerHTML = '<p>Posts indisponíveis.</p>';
+    if (relatedPosts) relatedPosts.innerHTML = '<p>Posts indisponíveis.</p>';
     return;
   };
 
@@ -152,6 +156,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   } catch (e) {
     console.error('Erro ao carregar posts:', e);
     const post = document.getElementById('post');
+    const latestPosts = document.getElementById('latest-posts');
+    const relatedPosts = document.getElementById('related-posts');
     if (post) post.innerHTML = '<p>Artigo não encontrado.</p>';
+    if (latestPosts) latestPosts.innerHTML = '<p>Posts indisponíveis.</p>';
+    if (relatedPosts) relatedPosts.innerHTML = '<p>Posts indisponíveis.</p>';
   }
 });
