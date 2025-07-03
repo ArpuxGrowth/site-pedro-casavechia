@@ -89,10 +89,10 @@ function renderLatestPosts(slice) {
       li.setAttribute('data-wow-delay', `${delay}s`);
       li.innerHTML = `
           <figure class="flex-shrink-0">
-              <a href="${uid}"><img class="border-radius-3px" src="${latestImg}" alt=""></a>
+              <a href="post.html?uid=${uid}"><img class="border-radius-3px" src="${latestImg}" alt=""></a>
           </figure>
           <div class="media-body flex-grow-1">
-              <a href="${uid}" class="font-weight-500 text-extra-dark-gray d-inline-block margin-five-bottom md-margin-two-bottom">${title}</a>
+              <a href="post.html?uid=${uid}" class="font-weight-500 text-extra-dark-gray d-inline-block margin-five-bottom md-margin-two-bottom">${title}</a>
               <span class="text-medium d-block line-height-22px">${date}</span>
           </div>
       `
@@ -119,12 +119,12 @@ function renderRelatedPosts(slice) {
       li.innerHTML = `
           <div class="blog-post">
               <div class="blog-post-image bg-fast-blue">
-                  <a href="${uid}"><img src="${thumbImg}" alt=""></a>
+                  <a href="post.html?uid=${uid}"><img src="${thumbImg}" alt=""></a>
               </div>
               <div class="post-details bg-white text-center padding-3-rem-all xl-padding-2-rem-all">
-                  <a href="${uid}" class="blog-category text-fast-blue margin-15px-bottom text-medium font-weight-500 letter-spacing-1px text-uppercase">Artigo</a>
-                  <a href="${uid}" class="alt-font text-extra-dark-gray text-extra-dark-gray-hover text-large line-height-26px d-block margin-20px-bottom">${title}</a>
-                  <a href="${uid}" class="alt-font text-uppercase text-extra-small letter-spacing-1px d-block">${date}</a>
+                  <a href="post.html?uid=${uid}" class="blog-category text-fast-blue margin-15px-bottom text-medium font-weight-500 letter-spacing-1px text-uppercase">Artigo</a>
+                  <a href="post.html?uid=${uid}" class="alt-font text-extra-dark-gray text-extra-dark-gray-hover text-large line-height-26px d-block margin-20px-bottom">${title}</a>
+                  <a href="post.html?uid=${uid}" class="alt-font text-uppercase text-extra-small letter-spacing-1px d-block">${date}</a>
               </div>
           </div>
       `
