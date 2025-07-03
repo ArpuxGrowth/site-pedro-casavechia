@@ -1,7 +1,8 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/:path*", "destination": "/:path*.html" },
-    { "source": "/blog/:uid", "destination": "/blog/post?uid=:uid" }
+    { "source": "/blog/:uid", "destination": "/blog/post.html?uid=:uid" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/:path*", "destination": "/:path*.html" }
   ]
 }
