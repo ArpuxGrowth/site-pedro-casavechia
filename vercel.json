@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/blog/:uid*", "destination": "/blog/post.html?uid=:uid*" },
+    { "source": "/blog", "destination": "/blog.html" },
     { "source": "/:path", "destination": "/:path.html" }
   ]
 }
