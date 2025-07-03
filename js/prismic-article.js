@@ -134,7 +134,10 @@ function renderRelatedPosts(slice) {
 // End -> Related posts
 
 document.addEventListener('DOMContentLoaded', async () => {
-  if (!uid) {
+  const pathname = window.location.pathname.replace(/\/$/, '');
+  const parts = pathname.split('/');
+  const slug = parts[parts.length - 1] || '';
+  if (!slug) {
     const post = document.getElementById('post');
     const latestPosts = document.getElementById('latest-posts');
     const relatedPosts = document.getElementById('related-posts');
@@ -146,7 +149,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   try {
     // Start -> Get 'article', 'latest-posts' and 'related-posts' elements
-    const article = await client.getByUID('blog_post', uid);
+    const article = await client.getByUID('blog_post', slug);
     const blogs = await client.getAllByType('blog_post');
     const slice = blogs.slice(0, 3);
     // End -> Get 'article', 'latest-posts', and 'related-posts' elements
