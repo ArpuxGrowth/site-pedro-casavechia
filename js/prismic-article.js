@@ -133,11 +133,95 @@ function renderRelatedPosts(slice) {
 }
 // End -> Related posts
 
+// Start -> Search articles
+function searchArticles(articles) {
+  articles.forEach((article) => {
+    const uid = article.uid;
+    const title = article.data.title[0]?.text.length > 55 ? article.data.title[0]?.text.slice(0, 52) + '...' : article.data.title[0]?.text || 'Título não encontrado';
+    const date = Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(article.data.date));
+    const latestImg = article.data.latest_image?.url;
+
+    const ul = document.getElementById('article-search');
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <figure class="flex-shrink-0">
+          <a href="${uid}"><img class="border-radius-3px" src="${latestImg}" alt=""></a>
+      </figure>
+      <div class="media-body flex-grow-1">
+          <a href="${uid}" class="font-weight-500 text-extra-dark-gray d-inline-block margin-five-bottom md-margin-two-bottom"><span class="item-name">${title}</span></a>
+          <span class="text-medium d-block line-height-22px">${date}</span>
+      </div>
+    `;
+
+    ul.appendChild(li);
+  });
+}
+// End -> Search articles
+
+// Start -> Filter function
+function filtrar() {
+  let input,
+      filter,
+      ul,
+      li,
+      a,
+      i,
+      span,
+      txtValue,
+      count = 0;
+
+      // Key elements
+      input = document.getElementById('input-search');
+      ul = document.getElementById('article-search');
+
+      // Filter
+      filter = input.value.toUpperCase();
+
+      // List items
+      li = ul.getElementsByTagName('li');
+
+      // Loop through list items
+      for (i = 0; i < li.length; i++) {
+        // Get 'a' element
+        a = li[i].getElementsByTagName('a')[1];
+        // Get 'a' text
+        txtValue = a.textContent || a.innerText;
+        // Compare text with filter
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = '';
+          count++
+          span = li[i].querySelector('.item-name');
+          if (span) {
+            span.innerHTML = txtValue.replace(new RegExp(filter, 'gi'), (match) => {
+              return '<strong>' + match + '</strong>';
+            });
+          };
+        } else {
+          li[i].style.display = 'none';
+        };
+      };
+
+      if (count === 0) {
+        ul.style.display = 'none';
+      } else {
+        ul.style.display = 'block';
+      };
+
+      if (filter === '') {
+        ul.style.display = 'none';
+      } else {
+        ul.style.display = 'block';
+      }
+
+}
+window.filtrar = filtrar;
+// End -> Filter function
+
 document.addEventListener('DOMContentLoaded', async () => {
   const pathname = window.location.pathname.replace(/\/$/, '');
   const parts = pathname.split('/');
   const slug = parts[parts.length - 1] || '';
-  if (!slug) {
+  if (!uid) {
     const post = document.getElementById('post');
     const latestPosts = document.getElementById('latest-posts');
     const relatedPosts = document.getElementById('related-posts');
@@ -148,14 +232,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   try {
-    // Start -> Get 'article', 'latest-posts' and 'related-posts' elements
-    const article = await client.getByUID('blog_post', slug);
-    const blogs = await client.getAllByType('blog_post');
-    const slice = blogs.slice(0, 3);
-    // End -> Get 'article', 'latest-posts', and 'related-posts' elements
+    // Start -> Get 'article', 'latest-posts', 'related-posts' and 'article-search' elements
+    const article = await client.getByUID('blog_post', uid);
+    const articles = await client.getAllByType('blog_post');
+    const slice = articles.slice(0, 3);
+    // End -> Get 'article', 'latest-posts',, 'related-posts' and 'article-search' elements
     renderArticle(article);
     renderLatestPosts(slice);
     renderRelatedPosts(slice);
+    searchArticles(articles);
   } catch (e) {
     console.error('Erro ao carregar posts:', e);
     const post = document.getElementById('post');

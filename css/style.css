@@ -3676,8 +3676,9 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .blog-comment li ul.child-comment li { margin-top: 60px; padding-bottom: 0;}
 
 /* sidebar article search */
-.article-search-sidebar { list-style: none; padding: 0; margin: 0; position: absolute; top: 49px; display: none; }
+.article-search-sidebar { list-style: none; padding: 0; margin: 0; position: absolute; top: 49px; display: none; z-index: 100; }
 .article-search-sidebar li {
+    display: flex;
     padding: 20px 10px;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     border-left: 1px solid rgba(0, 0, 0, .1);
