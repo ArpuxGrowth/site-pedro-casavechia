@@ -1,7 +1,20 @@
 {
   "rewrites": [
-    { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/blog/:uid+", "destination": "/blog/post.html?uid=:uid+" },
-    { "source": "/:path", "destination": "/:path.html" }
+    {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/blog/:uid+",
+      "destination": "/blog/post.html?uid=:uid+"
+    },
+    {
+      "source": "/:path",
+      "destination": "/:path.html"
+    },
+    {
+      "source": "/:dir/:page",
+      "destination": "/:dir/:page.html"
+    }
   ]
 }
